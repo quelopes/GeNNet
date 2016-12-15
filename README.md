@@ -71,6 +71,9 @@ The database is based on a NoSQL paradigm. It was built based on Neo4j [link](ht
 Although a NoSQL database has no fixed schema, we define an initial schema to help and guide the database. The graph structure is shown in Figure 2. We describe the nodes, relationships and properties associated with this model in detail below. 
 
 
+![Figura 2: Graph database schema in GeNNet.](GennetShiny/www/img/Graph_GeNNet.png)
+
+
 ##### **Genes**
 
 The nodes `GENE` represents the gene. The information was extracted from NCBI gene, which includes entrez_Id, gene symbol, summary, chromosome position, organism taxon, etc. 
@@ -142,6 +145,8 @@ The graph database can also be accessed directly through the Neo4j interface (av
 
 The database takes some time to initialize, it will be accessible only a few seconds after starting the container. To access Rstudio, the user needs to open the service in `http://localhost:8787` and enter both the username and password as `rstudio`.
 The Figure 3 represents the workflow steps implemented in R. 
+
+![Figura 3: Workflow structure in GeNNet.](GennetShiny/www/img/WorkflowStructure.png)
 
 #### **Module-A** 
 
