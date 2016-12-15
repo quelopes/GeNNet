@@ -22,7 +22,20 @@ $ docker pull quelopes/gennet
 ```
 $ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio -v dir/Results/:/home/rstudio gennet
 ```
+3 - Open browser
 
+3.1 - User-friendly
+```
+localhost:3838/gennet
+```
+3.2 - Rstudio
+```
+localhost:8787
+```
+3.3 - Neo4j
+```
+localhost:7474
+```
 
 ## **Licence**
 
