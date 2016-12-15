@@ -1,7 +1,7 @@
 # GeNNet: An Integrated platform for unifying scientific workflow management and graph databases for transcriptome data analysis
 
 
-_Raquel L. Costa_ and _Luiz Manoel Gadelha_ and _Marcelo Ribeiro-Alves_ and _Fabio Porto_ 
+_Raquel L. Costa_ and _Luiz Gadelha_ and _Marcelo Ribeiro-Alves_ and _Fabio Porto_ 
 
 _National Laboratory for Scientific Computing, LNCC_
 _National Laboratory of Cancer, INCA_
