@@ -96,8 +96,9 @@ The database is based on a NoSQL paradigm. It was built based on Neo4j [link](ht
 
 Although a NoSQL database has no fixed schema, we define an initial schema to help and guide the database. The graph structure is shown in Figure 2. We describe the nodes, relationships and properties associated with this model in detail below. 
 
-
 ![Figura 2: Graph database schema in GeNNet.](GennetShiny/www/img/Graph_GeNNet.png)
+![Figura 2: Graph database schema in GeNNet.](GennetShiny/www/img/Graph_GeNNet.png)
+
 
 
 ##### **Genes**
