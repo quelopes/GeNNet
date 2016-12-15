@@ -3,8 +3,9 @@
 
 _Raquel L. Costa_ and _Luiz Manoel Gadelha_ and _Marcelo Ribeiro-Alves_ and _Fabio Porto_ 
 
-_BD2K-LINCS Data Coordination and Integration Center (DCIC)_
-_Icahn School of Medicine at Mount Sinai, New York, NY 10029 USA_
+_National Laboratory for Scientific Computing, LNCC_
+_National Laboratory of Cancer, INCA_
+_National Institute of Infectology, Oswaldo Cruz Foundation_
 
 ## Publication
 soon
