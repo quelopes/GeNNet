@@ -1,4 +1,4 @@
-FROM centos:7
+FROM debian:8
 
 MAINTAINER Raquel Lopes Costa "quelopes@gmail.com"
 EXPOSE 3838 7474 8787
@@ -6,32 +6,39 @@ EXPOSE 3838 7474 8787
 # =============
 # --- Linux ---
 # =============
-RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
-    yum -y update && \
-    yum -y install libcurl-devel libxml2-devel openssl-devel libpng-devel R wget && \
-    yum -y clean all
+RUN    apt-get -y update && \
+    apt-get -y install libcurl4-openssl-dev libxml2-dev libssl-dev libpng-dev wget && \
+    apt-get -y clean
+
+RUN echo "deb http://cran.rstudio.com/bin/linux/debian jessie-cran3/" >> /etc/apt/sources.list && \
+    apt-key adv --keyserver keys.gnupg.net --recv-key 6212B7B7931C4BB16280BA1306F90DE5381BA480 && \
+    apt-get -y update && \
+    apt-get -y install r-base r-base-dev
 
 # ======================================
 # --- INSTALL BIOCONDUCTOR AND RNEO4J---
 # ======================================
-RUN R -e "source(\"https://bioconductor.org/biocLite.R\"); biocLite()" && \
-    R -e "source(\"https://bioconductor.org/biocLite.R\"); biocLite(c(\"GOstats\",\"hgu133plus2cdf\",\"hgu133acdf\",\"hgu133a2cdf\",\"hugene10stv1cdf\",\"affy\",\"impute\",\"Biobase\",\"limma\",\"org.Mmu.eg.db\",\"org.Mm.eg.db\",\"org.Rn.eg.db\",\"genefilter\",\"org.Hs.eg.db\",\"ggplot2\",\"igraph\",\"VennDiagram\",\"gplots\", \"fpc\",\"stringr\",\"WGCNA\",\"dynamicTreeCut\",\"frma\"))" && \
+RUN R -e "source(\"http://bioconductor.org/biocLite.R\"); biocLite()" && \
+    R -e "source(\"http://bioconductor.org/biocLite.R\"); biocLite(c(\"GOstats\",\"hgu133plus2cdf\",\"hgu133acdf\",\"hgu133a2cdf\",\"hugene10stv1cdf\",\"affy\",\"impute\",\"Biobase\",\"limma\",\"org.Mmu.eg.db\",\"org.Mm.eg.db\",\"org.Rn.eg.db\",\"genefilter\",\"org.Hs.eg.db\",\"ggplot2\",\"igraph\",\"VennDiagram\",\"gplots\", \"fpc\",\"stringr\",\"WGCNA\",\"dynamicTreeCut\",\"frma\"))" && \
     R -e "install.packages('RNeo4j',repos='https://cran.rstudio.com/', clean=TRUE)"
 
 # =======================
 # --- INSTALL RSTUDIO ---
 # =======================
+RUN apt-get -y install gdebi-core
 RUN VER=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver) && \
-    wget https://download2.rstudio.org/rstudio-server-rhel-${VER}-x86_64.rpm && \
-    yum -y install --nogpgcheck rstudio-server-rhel-${VER}-x86_64.rpm && \
-    rm rstudio-server-rhel-${VER}-x86_64.rpm && \
+    wget https://download2.rstudio.org/rstudio-server-${VER}-amd64.deb && \
+    gdebi --non-interactive rstudio-server-${VER}-amd64.deb && \
+    rm rstudio-server-${VER}-amd64.deb && \
     useradd -m rstudio && \
     echo "rstudio:rstudio" | chpasswd && \
-    yum -y clean all
+    apt-get -y clean
 
 # =====================
 # --- INSTALL NEO4J ---
 # =====================
+RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
+RUN apt-get update && apt-get -y install openjdk-8-jdk curl
 RUN wget -O neo4j.tar.gz https://neo4j.com/artifact.php?name=neo4j-community-3.0.6-unix.tar.gz && \
     cd /usr/local; tar xvfz /neo4j.tar.gz; ln -s neo4j-community-3.0.6 neo4j && \
     rm /neo4j.tar.gz && \
@@ -58,15 +65,13 @@ RUN /usr/local/neo4j/bin/neo4j start && \
 # =============
 # --- Shiny ---
 # =============
-RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/centos-6.3/x86_64/VERSION -O "version.txt" && \
+RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/VERSION -O "version.txt" && \
     VERSION=$(cat version.txt)  && \
-    wget --no-verbose "https://s3.amazonaws.com/rstudio-shiny-server-os-build/centos-6.3/x86_64/shiny-server-$VERSION-rh6-x86_64.rpm" -O ss-latest.rpm && \
-    yum -y install ss-latest.rpm && \
-    mkdir /usr/share/doc/R-3.3.1/html/ && \
-    rm -f version.txt ss-latest.rpm && \
+    wget --no-verbose "https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/shiny-server-$VERSION-amd64.deb" -O ss-latest.deb && \
+    gdebi --non-interactive ss-latest.deb && \
+    rm -f version.txt ss-latest.deb && \
     R -e "install.packages(c('shiny', 'rmarkdown'), repos='https://cran.rstudio.com/', clean=TRUE)" && \
-    cp -R /usr/lib64/R/library/shiny/examples/* /srv/shiny-server/ && \
-    yum -y clean all
+    apt-get -y clean 
 RUN R -e "install.packages(c('shinydashboard','shiny','shinythemes','RNeo4j','visNetwork','ggplot2','data.table','networkD3','igraph','shinyBS','RColorBrewer','devtools','d3heatmap'), repos='https://cran.rstudio.com/', clean=TRUE)"
 
 RUN wget -O RDataTracker.tar.gz http://harvardforest.fas.harvard.edu/data/p09/hf091/hf091-01-RDataTracker_2.24.0.tar.gz && \
