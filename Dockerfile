@@ -55,12 +55,12 @@ ADD DataGraph/TFs.csv //usr/local/neo4j/data/databases/graph.db/import/
 ADD DataGraph/taxon.csv //usr/local/neo4j/data/databases/graph.db/import/
 RUN gunzip -f /usr/local/neo4j/data/databases/graph.db/import/PPI.csv.gz
 
-RUN /usr/local/neo4j/bin/neo4j start && \
-    sleep 20 && \
-    curl -H "Content-Type: application/json" -X POST -d '{"password":"graph"}' -u neo4j:neo4j http://localhost:7474/user/neo4j/password && \
-    /usr/local/neo4j/bin/neo4j stop && \
-    /usr/local/neo4j/bin/neo4j-shell -v -path /usr/local/neo4j/data/databases/graph.db -config /usr/local/neo4j/conf/neo4j.conf -file /var/tmp/import.cql && \
-    rm -rf /usr/local/neo4j/data/databases/graph.db/neostore.transaction.db.*
+#RUN /usr/local/neo4j/bin/neo4j start && \
+#    sleep 20 && \
+#    curl -H "Content-Type: application/json" -X POST -d '{"password":"graph"}' -u neo4j:neo4j http://localhost:7474/user/neo4j/password && \
+#    /usr/local/neo4j/bin/neo4j stop && \
+#    /usr/local/neo4j/bin/neo4j-shell -v -path /usr/local/neo4j/data/databases/graph.db -config /usr/local/neo4j/conf/neo4j.conf -file /var/tmp/import.cql && \
+#    rm -rf /usr/local/neo4j/data/databases/graph.db/neostore.transaction.db.*
 
 # =============
 # --- Shiny ---
