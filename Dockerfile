@@ -19,7 +19,7 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/debian jessie-cran3/" >> /etc/ap
 # --- INSTALL BIOCONDUCTOR AND RNEO4J---
 # ======================================
 RUN R -e "source(\"http://bioconductor.org/biocLite.R\"); biocLite()" && \
-    R -e "source(\"http://bioconductor.org/biocLite.R\"); biocLite(c(\"GOstats\",\"hgu133plus2cdf\",\"hgu133acdf\",\"hgu133a2cdf\",\"hugene10stv1cdf\",\"affy\",\"impute\",\"Biobase\",\"limma\",\"org.Mmu.eg.db\",\"org.Mm.eg.db\",\"org.Rn.eg.db\",\"genefilter\",\"org.Hs.eg.db\",\"ggplot2\",\"igraph\",\"VennDiagram\",\"gplots\", \"fpc\",\"stringr\",\"WGCNA\",\"dynamicTreeCut\",\"frma\"))" && \
+    R -e "source(\"http://bioconductor.org/biocLite.R\"); biocLite(c(\"GOstats\",\"hgu133plus2cdf\",\"hgu133plus2frmavecs\",\"hgu133acdf\",\"hgu133a2cdf\",\"hugene10stv1cdf\",\"affy\",\"impute\",\"Biobase\",\"limma\",\"org.Mmu.eg.db\",\"org.Mm.eg.db\",\"org.Rn.eg.db\",\"genefilter\",\"org.Hs.eg.db\",\"ggplot2\",\"igraph\",\"VennDiagram\",\"gplots\", \"fpc\",\"stringr\",\"WGCNA\",\"dynamicTreeCut\",\"frma\"))" && \
     R -e "install.packages('RNeo4j',repos='https://cran.rstudio.com/', clean=TRUE)"
 
 # =======================
