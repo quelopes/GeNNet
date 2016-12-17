@@ -10,7 +10,7 @@ plataformas = c("GPL570: [HG-U133_Plus_2] Affymetrix Human Genome U133 Plus 2.0 
 
 organismAnnot = c("Homo sapiens","Macaca mulatta","Mus musculus","Rattus norvegicus")
 
-normMethod = c("MAS5","RMA")
+normMethod = c("MAS5","RMA","fRMA")
 
 clustMethod = c("average (UPGMA)","complete","median(WPGMC)","centroid(UPGMC)")
 distMatrix = c("Euclidian","Pearson","Spearman")
