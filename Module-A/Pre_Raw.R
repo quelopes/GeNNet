@@ -61,6 +61,13 @@ pre_Raw = function(wayRaw,wayOut,pheno,method,nameExp){
   
   
   # === NORMALIZATION ===
+  if(method == "frma"){
+    eset.frma = frma(raw) # few minutes...
+    exprSet.nologs = exprs(eset.frma)
+    exprSet = log(exprSet.nologs, 2)
+    #summary(exprSet)
+  }
+  
   # --- if mas5 --- 
   if(method == "mas5"){
     eset.mas5 = mas5(raw) # few minutes...
