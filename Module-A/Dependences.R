@@ -14,6 +14,7 @@ dependences = function(){
   library(hgu133plus2cdf)
   library(hgu133a2cdf)
   library(hugene10stv1cdf)
+  library(hgu133plus2frmavecs)
   library(frma)
   
   # ----- ANNOTATION & ENRICHMENT -----
