@@ -3,9 +3,9 @@
 
 _Raquel L. Costa_ and _Luiz Gadelha_ and _Marcelo Ribeiro-Alves_ and _Fabio Porto_ 
 
-_National Laboratory for Scientific Computing, LNCC_
-_National Laboratory of Cancer, INCA_
-_National Institute of Infectology, Oswaldo Cruz Foundation_
+_National Laboratory for Scientific Computing (LNCC),_
+_National Laboratory of Cancer (INCA),_
+_National Institute of Infectology, Oswaldo Cruz Foundation (Fiocruz)_
 
 ## Publication
 soon
