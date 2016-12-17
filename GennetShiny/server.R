@@ -93,6 +93,8 @@ shinyServer(function(input, output, session){
       normMeth = "mas5"
     }else if(input$normMeth == "RMA"){
       normMeth = "rma"
+    }else if(input$normMeth == "fRMA"){
+      normMeth = "frma"
     }
     return(normMeth)
   })
