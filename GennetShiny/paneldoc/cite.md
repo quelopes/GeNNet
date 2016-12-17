@@ -13,7 +13,7 @@ Marcelo Ribeiro-Alves
 
 Fabio Porto [link](http://dexl.lncc.br/)
 
-from LNCC (Laboratorio Nacional de Computacao Cientifica) [link](http://www.lncc.br/) and Fiocruz (Fundacao Osvaldo Cruz) [link](http://portal.fiocruz.br/pt-br).
+from LNCC (National Laboratory for Scientific Computing) [link](http://www.lncc.br/) and Fiocruz (Oswaldo Cruz Foundation) [link](http://portal.fiocruz.br/pt-br).
 
 
 ## **Licence**
@@ -25,14 +25,8 @@ GNU GENERAL PUBLIC LICENSE version 3 by Free Software Foundation, Inc. converted
 Manuscript submited to BMC Bioinformatics.
 
 ## **We are in**
-Github: [link](https://github.com/)
+Github: [link](https://github.com/raquele/GeNNet)
 
-OmicTools: [link](https://omictools.com/)
-
-DockerHub: [link](https://hub.docker.com/)
-
-Graphigist: [link](https://neo4j.com/graphgists/)
-
-RPubs: [link](https://rpubs.com)
+DockerHub: [link](https://hub.docker.com/r/quelopes/gennet)
 
 
