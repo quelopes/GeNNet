@@ -4,16 +4,14 @@ MAINTAINER Raquel Lopes Costa "quelopes@gmail.com"
 EXPOSE 3838 7474 8787
 
 # =============
-# --- Linux ---
+# --- Linux AND R ---
 # =============
-RUN    apt-get -y update && \
-    apt-get -y install libcurl4-openssl-dev libxml2-dev libssl-dev libpng-dev wget && \
-    apt-get -y clean
 
 RUN echo "deb http://cran.rstudio.com/bin/linux/debian jessie-cran3/" >> /etc/apt/sources.list && \
     apt-key adv --keyserver keys.gnupg.net --recv-key 6212B7B7931C4BB16280BA1306F90DE5381BA480 && \
     apt-get -y update && \
-    apt-get -y install r-base r-base-dev && apt-get -y clean
+    apt-get -y install r-base r-base-dev libcurl4-openssl-dev libxml2-dev libssl-dev libpng-dev wget gdebi-core openjdk-8-jdk curl && \
+    apt-get -y clean
 
 # ======================================
 # --- INSTALL BIOCONDUCTOR AND RNEO4J---
@@ -25,7 +23,6 @@ RUN R -e "source(\"http://bioconductor.org/biocLite.R\"); biocLite()" && \
 # =======================
 # --- INSTALL RSTUDIO ---
 # =======================
-RUN apt-get -y install gdebi-core && apt-get -y clean
 RUN VER=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver) && \
     wget https://download2.rstudio.org/rstudio-server-${VER}-amd64.deb && \
     gdebi --non-interactive rstudio-server-${VER}-amd64.deb && \
@@ -38,7 +35,6 @@ RUN VER=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-serv
 # --- INSTALL NEO4J ---
 # =====================
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
-RUN apt-get update && apt-get -y install openjdk-8-jdk curl && apt-get -y clean
 RUN wget -O neo4j.tar.gz https://neo4j.com/artifact.php?name=neo4j-community-3.0.6-unix.tar.gz && \
     cd /usr/local; tar xvfz /neo4j.tar.gz; ln -s neo4j-community-3.0.6 neo4j && \
     rm /neo4j.tar.gz && \
@@ -71,7 +67,7 @@ RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubu
     gdebi --non-interactive ss-latest.deb && \
     rm -f version.txt ss-latest.deb && \
     R -e "install.packages(c('shiny', 'rmarkdown'), repos='https://cran.rstudio.com/', clean=TRUE)" && \
-    apt-get -y clean 
+    apt-get -y clean
 RUN R -e "install.packages(c('shinydashboard','shiny','shinythemes','RNeo4j','visNetwork','ggplot2','data.table','networkD3','igraph','shinyBS','RColorBrewer','devtools','d3heatmap'), repos='https://cran.rstudio.com/', clean=TRUE)"
 
 RUN wget -O RDataTracker.tar.gz http://harvardforest.fas.harvard.edu/data/p09/hf091/hf091-01-RDataTracker_2.24.0.tar.gz && \
