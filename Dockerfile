@@ -8,9 +8,12 @@ EXPOSE 3838 7474 8787
 # =============
 
 RUN echo "deb http://cran.rstudio.com/bin/linux/debian jessie-cran3/" >> /etc/apt/sources.list && \
+    echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list && \
     apt-key adv --keyserver keys.gnupg.net --recv-key 6212B7B7931C4BB16280BA1306F90DE5381BA480 && \
     apt-get -y update && \
-    apt-get -y install r-base r-base-dev libcurl4-openssl-dev libxml2-dev libssl-dev libpng-dev wget gdebi-core openjdk-8-jdk curl && \
+    apt-get -y install r-base r-base-dev && \
+    apt-get -y install libcurl4-openssl-dev libxml2-dev libssl-dev libpng-dev && \
+    apt-get -y install wget gdebi-core openjdk-8-jdk curl && \
     apt-get -y clean
 
 # ======================================
@@ -34,7 +37,6 @@ RUN VER=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-serv
 # =====================
 # --- INSTALL NEO4J ---
 # =====================
-RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
 RUN wget -O neo4j.tar.gz https://neo4j.com/artifact.php?name=neo4j-community-3.0.6-unix.tar.gz && \
     cd /usr/local; tar xvfz /neo4j.tar.gz; ln -s neo4j-community-3.0.6 neo4j && \
     rm /neo4j.tar.gz && \
