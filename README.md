@@ -7,6 +7,8 @@ _National Laboratory for Scientific Computing (LNCC),_
 _National Laboratory of Cancer (INCA),_
 _National Institute of Infectology, Oswaldo Cruz Foundation (Fiocruz)_
 
+e-mail: quelopes@gmail.com
+
 ## Publication
 soon
 
