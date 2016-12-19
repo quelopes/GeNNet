@@ -22,6 +22,8 @@ GNU GENERAL PUBLIC LICENSE version 3 by Free Software Foundation, Inc. converted
 
 ## **Citing**
 
+BioRxiv: doi: https://doi.org/10.1101/095257
+
 Manuscript submited to BMC Bioinformatics.
 
 ## **We are in**
