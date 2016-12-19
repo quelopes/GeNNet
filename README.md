@@ -9,8 +9,8 @@ _National Institute of Infectology, Oswaldo Cruz Foundation (Fiocruz)_
 
 e-mail: quelopes@gmail.com
 
-## Publication
-soon
+## References
+doi: https://doi.org/10.1101/095257
 
 ## Run the GeNNet 
 
