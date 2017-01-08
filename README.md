@@ -26,15 +26,15 @@ $ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio
 ```
 3 - Open browser
 
-3.1 - User-friendly
+3.1 - User-friendly, set parameters
 ```
 localhost:3838/gennet
 ```
-3.2 - Rstudio
+3.2 - RStudio
 ```
 localhost:8787
 ```
-3.3 - Neo4j
+3.3 - Using the graph database (Neo4j)
 ```
 localhost:7474
 ```
