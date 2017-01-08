@@ -22,7 +22,7 @@ $ docker pull quelopes/gennet
 2 - Run the Docker image   
 
 ```
-$ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio -v dir/Results/:/home/rstudio gennet
+$ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio -v dir/Results/:/home/rstudio quelopes/gennet
 ```
 3 - Open browser
 
