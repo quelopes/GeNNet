@@ -49,7 +49,6 @@ RUN wget -O neo4j.tar.gz https://neo4j.com/artifact.php?name=neo4j-community-3.0
 ADD import.cql /var/tmp/
 ADD DataGraph/data.csv //usr/local/neo4j/data/databases/graph.db/import/
 ADD DataGraph/PPI.csv.gz //usr/local/neo4j/data/databases/graph.db/import/
-ADD DataGraph/TFs.csv //usr/local/neo4j/data/databases/graph.db/import/
 ADD DataGraph/taxon.csv //usr/local/neo4j/data/databases/graph.db/import/
 RUN gunzip -f /usr/local/neo4j/data/databases/graph.db/import/PPI.csv.gz
 
