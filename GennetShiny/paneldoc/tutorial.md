@@ -1,6 +1,69 @@
 ---
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
+[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)
+
+<div style="float: right; margin-left: 10px;"><img title="GeNNet." style="float: right;margin-left: 10px;" src="GennetShiny/www/img/logoNew.png" align=right height=80/></div>
+
+# GeNNet: An Integrated platform for unifying scientific workflow management and graph databases for transcriptome data analysis 
+
+_Raquel L. Costa_ and _Luiz Gadelha_ and _Marcelo Ribeiro-Alves_ and _Fabio Porto_ 
+
+_National Laboratory for Scientific Computing (LNCC),_
+_National Laboratory of Cancer (INCA),_
+_National Institute of Infectology, Oswaldo Cruz Foundation (Fiocruz)_
+
+e-mail: quelopes@gmail.com
+
+## **References**
+GeNNet: An Integrated Platform for Unifying Scientific Workflow Management and Graph Databases for Transcriptome Data Analysis.
+DOI: https://doi.org/10.1101/095257
+
+
+# **Table of Contents**
+* [Run the GeNNet](#run-the-GeNNet)
+* [Licence](#licence)
+* [About](#about)
+    * [A: A user-friendly Shiny-based web interface to the workflow experiment](#a-a-user-friendly-shiny-based-web-interface-to-the-workflow-experiment)
+    * [B: Access the Graph Database](#b-access-the-graph-database)
+    * [C: Access RStudio](#c-access-rstudio)
+    * [Results](#results)
+
+
+## **Run the GeNNet** 
+
+1 - Pull our Docker image from Dockerhub. See in: [link](https://hub.docker.com/r/quelopes/gennet/)
+
+```
+$ docker pull quelopes/gennet
+```
+
+2 - Run the Docker image   
+
+```
+$ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio -v dir/Results/:/home/rstudio quelopes/gennet
+```
+3 - Open your browser
+
+3.1 - User-friendly mode, set parameters.
+```
+localhost:3838/gennet
+```
+3.2 - Change the functions or create news in RStudio.
+```
+localhost:8787
+```
+3.3 - Using the graph database (Neo4j) to access the results.
+```
+localhost:7474
+```
+
+## **Licence**
+
+GNU GENERAL PUBLIC LICENSE version 3 by Free Software Foundation, Inc. Read the original GPL v3.
 
 # **About**
 
