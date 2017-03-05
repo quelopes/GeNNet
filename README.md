@@ -1,3 +1,13 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
+[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)
+
+
+
 # GeNNet: An Integrated platform for unifying scientific workflow management and graph databases for transcriptome data analysis
 
 
@@ -9,12 +19,25 @@ _National Institute of Infectology, Oswaldo Cruz Foundation (Fiocruz)_
 
 e-mail: quelopes@gmail.com
 
-## References
-doi: https://doi.org/10.1101/095257
+## **References**
+GeNNet: An Integrated Platform for Unifying Scientific Workflow Management and Graph Databases for Transcriptome Data Analysis.
+DOI: https://doi.org/10.1101/095257
 
-## Run the GeNNet 
 
-1 - Pull our Docker image from Dockerhub
+# **Table of Contents**
+* [Run the GeNNet](#run-the-GeNNet)
+* [Licence](#licence)
+* [About](#about)
+    * [A: A user-friendly Shiny-based web interface to the workflow experiment](#a-a-user-friendly-shiny-based-web-interface-to-the-workflow-experiment)
+    * [B: Access the Graph Database](#b-access-the-graph-database)
+    * [C: Access RStudio](#c-access-rstudio)
+    * [Results](#results)
+
+
+## **Run the GeNNet** 
+
+1 - Pull our Docker image from Dockerhub. See in: [link](https://hub.docker.com/r/quelopes/gennet/)
+
 ```
 $ docker pull quelopes/gennet
 ```
@@ -24,24 +47,24 @@ $ docker pull quelopes/gennet
 ```
 $ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio -v dir/Results/:/home/rstudio quelopes/gennet
 ```
-3 - Open browser
+3 - Open your browser
 
-3.1 - User-friendly, set parameters
+3.1 - User-friendly mode, set parameters.
 ```
 localhost:3838/gennet
 ```
-3.2 - RStudio
+3.2 - Change the functions or create news in RStudio.
 ```
 localhost:8787
 ```
-3.3 - Using the graph database (Neo4j)
+3.3 - Using the graph database (Neo4j) to access the results.
 ```
 localhost:7474
 ```
 
 ## **Licence**
 
-GNU GENERAL PUBLIC LICENSE version 3 by Free Software Foundation, Inc. converted to Markdown. Read the original GPL v3.
+GNU GENERAL PUBLIC LICENSE version 3 by Free Software Foundation, Inc. Read the original GPL v3.
 
 # **About**
 
