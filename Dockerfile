@@ -131,3 +131,4 @@ ADD Module-A/AmdDetec.R /home/rstudio/Module-A/
 USER root
 CMD chmod -R 777 /home/rstudio && /usr/lib/rstudio-server/bin/rserver --server-daemonize=1 && \
     /usr/local/neo4j/bin/neo4j start && sleep 20 && /usr/bin/shiny-server.sh
+
