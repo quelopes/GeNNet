@@ -54,7 +54,7 @@ ADD DataGraph/taxon.csv //usr/local/neo4j/data/databases/graph.db/import/
 RUN gunzip -f /usr/local/neo4j/data/databases/graph.db/import/PPI.csv.gz
 
 RUN /usr/local/neo4j/bin/neo4j start && \
-    sleep 20 && \
+    sleep 40 && \
     echo "neo4j:SHA-256,614976D15DE5DDAEB1A60CE58654586D8F1589AD71FE442B243767E8AB4A065C,A924AB72EA3DC4A302D9E369E2363116:" > /usr/local/neo4j/data/dbms/auth && \
     /usr/local/neo4j/bin/neo4j stop && \
     /usr/local/neo4j/bin/neo4j-shell -v -path /usr/local/neo4j/data/databases/graph.db -config /usr/local/neo4j/conf/neo4j.conf -file /var/tmp/import.cql && \
