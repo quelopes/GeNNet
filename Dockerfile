@@ -13,9 +13,10 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/debian jessie-cran3/" >> /etc/ap
     apt-get -y update && \
     apt-get -y install r-base r-base-dev && \
     apt-get -y install libcurl4-openssl-dev libxml2-dev libssl-dev libpng-dev && \
-    apt-get -y install -t jessie-backports ca-certificates-java && \
+    apt-get -y install -t jessie-backports ca-certificates-java openjdk-8-jre-headless && \
     apt-get -y install wget gdebi-core openjdk-8-jdk curl && \
     apt-get -y clean
+RUN /usr/sbin/update-java-alternatives -s java-1.8.0-openjdk-amd64
 
 # ======================================
 # --- INSTALL BIOCONDUCTOR AND RNEO4J---
