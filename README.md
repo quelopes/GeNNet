@@ -60,20 +60,31 @@ $ docker pull quelopes/gennet
 ```
 $ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio/Data -v dir/Results/:/home/rstudio/Results quelopes/gennet
 ```
+
 **3 - Open your browser**
 
 3.1 - User-friendly mode, set parameters.
+
 ```
 localhost:3838/gennet
 ```
+
 3.2 - Change the functions or create news in RStudio.
+
 ```
 localhost:8787
 ```
+username: rstudio
+password: rstudio
+
 3.3 - Using the graph database (Neo4j) to access the results.
+
 ```
 localhost:7474
 ```
+
+username: neo4j
+password: graph
 
 ## **Licence**
 
