@@ -75,6 +75,7 @@ localhost:3838/gennet
 localhost:8787
 ```
 username: rstudio
+
 password: rstudio
 
 3.3 - Using the graph database (Neo4j) to access the results.
@@ -84,6 +85,7 @@ localhost:7474
 ```
 
 username: neo4j
+
 password: graph
 
 ## **Licence**
