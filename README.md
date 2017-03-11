@@ -97,7 +97,7 @@ GNU GENERAL PUBLIC LICENSE version 3 by Free Software Foundation, Inc. Read the 
 
 # **About**
 
-GeNNet is a platform to execute experiments using transcriptome data, specially developed for analyzing microarray platforms currently available for human, rhesus, mice and rat. The structure is composed by three different parts: **A** -- A user-friendly Shiny-based web interface to the workflow experiment; **B** -- Accessing the resulting gene interaction graph database using Neo4j and **C** -- Executing or editing the workflow experiment using RStudio (for advanced users and developers). Figure 1 (below) describes the GeNNet architecture.
+GeNNet is a platform to execute experiments using transcriptome data, specially developed for analyzing microarray platforms currently available for human, rhesus, mice and rat. The structure is composed by three different parts: **A** -- A user-friendly Shiny-based web interface to the workflow experiment; **B** -- Executing or editing the workflow experiment using RStudio (for advanced users and developers) and **C** -- Accessing the resulting gene interaction graph database using Neo4j. Figure 1 (below) describes the GeNNet architecture.
 
 ![Figura 1: Framework of GeNNet.](GennetShiny/www/img/GeNNet-Framework-Docker.png)
 
@@ -141,84 +141,7 @@ Currently GeNNet contains four platforms with the corresponding number associate
 
 After the configuration of all parameters, this last step executes the GeNNet workflow. This can take some time, users can check the execution progress by accessing the tab `Console`. After the execution, the results are placed the directory `Results`, including a complete graph database for visualization, making more questions and having insights about the data.
 
-### **B -- Access the Graph Database**
-
-The graph database is an intuitive way for connecting and visualizing relationships. In the GeNNet platform there is an initial database defined by interactions among genes from STRING-DB. During the execution of the GeNNet workflow by shiny or RStudio, new nodes and connections are formed and added to the database. 
-
-The database is based on a NoSQL paradigm. It was built based on Neo4j [link](https://neo4j.com/). We chose this database because it was a natural way of representing the interaction among the nodes (genes) and the nodes derived from analysis. Furthermore, this database is free to use, multiplatform and easy to use and manipulate the data. 
-
-Although a NoSQL database has no fixed schema, we define an initial schema to help and guide the database. The graph structure is shown in Figure 2. We describe the nodes, relationships and properties associated with this model in detail below. 
-
-![Figura 2: Graph database schema in GeNNet.](GennetShiny/www/img/Graph_GeNNet.png)
-
-##### **Genes**
-
-The nodes `GENE` represents the gene. The information was extracted from NCBI gene, which includes entrez_Id, gene symbol, summary, chromosome position, organism taxon, etc. 
-
-##### **Organism**
-
-Describes the `ORGANISM` selected by the experiment. This node contains information including scientific name and Taxon id (TxId) from NCBI.
-
-##### **Experiment**
-
-The node `EXPERIMENT` contains information about the overal design, accession number from main transcriptome repositories (or other identifier). 
-
-##### **Cluster**
-
-`CLUSTER` node is associated with a set of genes which were selected in biological function enrichment analysis. This node contains information about ...
-
-##### **GO**
-
-The `GO` node expresses the Gene Ontologies significantly associated with the cluster node. 
-
-##### **Platform**
-
-The `PLATFORM` node expresses the Gene Ontologies significantly associated with the cluster node. 
-
-##### **Has_a**
-This is a relationship among `(ORGANISM)-[Has_a]->(GENE)` 
-
-##### **PPI**
-
-Relationship among genes, `(GENE)-[PPI_interaction]->(GENE)`
-
-##### **Was_clusterized**
-
-Relationship
-
-##### **Tech_Used**
-
-`(EXPERIMENT)-[Tech_Used]-(PLATFORM)`
-
-##### **Belong**
-
-`(CLUSTER)-[Belong]-(EXPERIMENT)`
-
-##### **Has**
-
-`(Platform)-[HAS]-(GENE)`
-
-##### **Was_represented**
-
-`(CLUSTER)-[Was_represented]-(GENE)`
-
-##### **Was_normalized**
-
-`(EXPERIMENT)-[Was_normalized]-(GENE)`
-
-##### **Was_selected**
-
-`(GENE)-[Was_selected]->(EXPERIMENT)`
-
-#### **Statistics**
-
-Some basic statistics are available in `Results/GraphDB-statistics` which include number of nodes per label, number of relationships and nodes, and relationship associations.
-
-#### **Persistence of data**
-
-The graph database can also be accessed directly through the Neo4j interface (available at: \url{http://localhost:7474}). It is possible to query and access the database in this interface using the `Cypher` language, a declarative query language for Neo4j, or `Gremlin`, a general-purpose query language for graph databases. These query languages allows for manipulating data by updating or deleting nodes, edges and properties in the graph. Querying also allows for exploring new hypotheses. It is also possible to integrate new information from different resources that are related to the targeted experiment. `GeNNet-DB` is persistent (exported to the `Results` directory) and the resulting database is exported to a directory in the computer that runs the container. Its contents can be loaded to a similar Neo4j installation. For further details one can read the Neo4j manual. More details are available in the Neo4j manual [link](https://neo4j.com/).
-
-### **C -- Access RStudio**
+### **B -- Access RStudio**
 
 The database takes some time to initialize, it will be accessible only a few seconds after starting the container. To access Rstudio, the user needs to open the service in `http://localhost:8787` and enter both the username and password as `rstudio`.
 The Figure 3 represents the workflow steps implemented in R. 
@@ -256,8 +179,39 @@ In the genes grouped by similar patterns we can identify over-represented (enric
 ### **Results**
 During the workflow execution (in RStudio or Shiny) a set of results are written in the directory `Results` which ensures the re-use and persistence of data. 
 
+### **C -- Access the Graph Database**
 
+The graph database is an intuitive way for connecting and visualizing relationships. In the GeNNet platform there is an initial database defined by interactions among genes from STRING-DB. During the execution of the GeNNet workflow by shiny or RStudio, new nodes and connections are formed and added to the database. 
 
+The database is based on a NoSQL paradigm. It was built based on Neo4j [link](https://neo4j.com/). We chose this database because it was a natural way of representing the interaction among the nodes (genes) and the nodes derived from analysis. Furthermore, this database is free to use, multiplatform and easy to use and manipulate the data. 
 
+Although a NoSQL database has no fixed schema, we define an initial schema to help and guide the database. The graph structure is shown in Figure 2. We describe the nodes, relationships and properties associated with this model in detail below. 
 
+![Figura 2: Graph database schema in GeNNet.](GennetShiny/www/img/Graph_GeNNet.png)
 
+##### **Genes**
+
+The nodes `GENE` represents the gene. The information was extracted from NCBI gene, which includes entrez_Id, gene symbol, summary, chromosome position, organism taxon, etc. 
+
+##### **Organism**
+
+Describes the `ORGANISM` selected by the experiment. This node contains information including scientific name and Taxon id (TxId) from NCBI.
+
+##### **Experiment**
+
+The node `EXPERIMENT` contains information about the overal design, accession number from main transcriptome repositories (or other identifier). 
+
+##### **Cluster**
+
+`CLUSTER` node is associated with a set of genes which were selected in biological function enrichment analysis. This node contains information about ...
+
+##### **GO**
+
+The `GO` node expresses the Gene Ontologies significantly associated with the cluster node. 
+
+##### **Platform**
+
+The `PLATFORM` node expresses the Gene Ontologies significantly associated with the cluster node. 
+
+##### **Has_a**
+This is a relationship among `(ORGANISM)-[Has_a]->(GENE)` 
