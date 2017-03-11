@@ -7,8 +7,6 @@ output:
 [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)
 
 
-<div style="float: right; margin-left: 10px;"><img title="GeNNet." style="float: right;margin-left: 10px;" src="GennetShiny/www/img/logoNew.png" align=right height=80/></div>
-
 # GeNNet: An Integrated platform for unifying scientific workflow management and graph databases for transcriptome data analysis
 
 
