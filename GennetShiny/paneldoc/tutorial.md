@@ -6,9 +6,11 @@ output:
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
 [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)
 
+
 <div style="float: right; margin-left: 10px;"><img title="GeNNet." style="float: right;margin-left: 10px;" src="GennetShiny/www/img/logoNew.png" align=right height=80/></div>
 
-# GeNNet: An Integrated platform for unifying scientific workflow management and graph databases for transcriptome data analysis 
+# GeNNet: An Integrated platform for unifying scientific workflow management and graph databases for transcriptome data analysis
+
 
 _Raquel L. Costa_ and _Luiz Gadelha_ and _Marcelo Ribeiro-Alves_ and _Fabio Porto_ 
 
@@ -33,20 +35,30 @@ DOI: https://doi.org/10.1101/095257
     * [Results](#results)
 
 
-## **Run the GeNNet** 
+## **Run GeNNet** 
 
-1 - Pull our Docker image from Dockerhub. See in: [link](https://hub.docker.com/r/quelopes/gennet/)
+**0 - Install Docker**
+
+For Windows: [link](https://docs.docker.com/docker-for-windows/install/)
+
+For Mac: [link](https://docs.docker.com/docker-for-mac/install/)
+
+For Linux distribution (ex: Ubuntu) [link](https://docs.docker.com/engine/installation/linux/ubuntu/)
+
+**1 - Pull our Docker image from Dockerhub.**
+
+See in: [link](https://hub.docker.com/r/quelopes/gennet/)
 
 ```
 $ docker pull quelopes/gennet
 ```
 
-2 - Run the Docker image   
+**2 - Run the Docker image**   
 
 ```
 $ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio -v dir/Results/:/home/rstudio quelopes/gennet
 ```
-3 - Open your browser
+**3 - Open your browser**
 
 3.1 - User-friendly mode, set parameters.
 ```
@@ -69,7 +81,7 @@ GNU GENERAL PUBLIC LICENSE version 3 by Free Software Foundation, Inc. Read the 
 
 GeNNet is a platform to execute experiments using transcriptome data, specially developed for analyzing microarray platforms currently available for human, rhesus, mice and rat. The structure is composed by three different parts: **A** -- A user-friendly Shiny-based web interface to the workflow experiment; **B** -- Accessing the resulting gene interaction graph database using Neo4j and **C** -- Executing or editing the workflow experiment using RStudio (for advanced users and developers). Figure 1 (below) describes the GeNNet architecture.
 
-![Figura 1: Framework of GeNNet.](../www/img/GeNNet-Framework-Docker.png)
+![Figura 1: Framework of GeNNet.](GennetShiny/www/img/GeNNet-Framework-Docker.png)
 
 
 #### **ARCHIVES** 
@@ -120,7 +132,8 @@ The database is based on a NoSQL paradigm. It was built based on Neo4j [link](ht
 
 Although a NoSQL database has no fixed schema, we define an initial schema to help and guide the database. The graph structure is shown in Figure 2. We describe the nodes, relationships and properties associated with this model in detail below. 
 
-![Figura 2: Graph database schema in GeNNet.](../www/img/Graph_GeNNet.png)
+![Figura 2: Graph database schema in GeNNet.](GennetShiny/www/img/Graph_GeNNet.png)
+
 
 ##### **Genes**
 
@@ -175,7 +188,7 @@ Relationship
 
 ##### **Was_normalized**
 
-(EXPERIMENT)-[Was_normalized]-(GENE)`
+`(EXPERIMENT)-[Was_normalized]-(GENE)`
 
 ##### **Was_selected**
 
@@ -194,7 +207,7 @@ The graph database can also be accessed directly through the Neo4j interface (av
 The database takes some time to initialize, it will be accessible only a few seconds after starting the container. To access Rstudio, the user needs to open the service in `http://localhost:8787` and enter both the username and password as `rstudio`.
 The Figure 3 represents the workflow steps implemented in R. 
 
-![Figura 3: Workflow structure in GeNNet.](../www/img/WorkflowStructure.png)
+![Figura 3: Workflow structure in GeNNet.](GennetShiny/www/img/WorkflowStructure.png)
 
 #### **Module-A** 
 
@@ -226,22 +239,6 @@ In the genes grouped by similar patterns we can identify over-represented (enric
 
 ### **Results**
 During the workflow execution (in RStudio or Shiny) a set of results are written in the directory `Results` which ensures the re-use and persistence of data. 
-
-Archive                                 |   Type
-----------------------------------------|--------------------
-[nameExp]-MatrixNormalized.csv          | normalized matrix
-[nameExp]-MatrixGO.csv                  | matrix GO
-[nameExp]-MatrixProbe-lmFit.csv         | matrix
-[nameExp]-MatrixExpressionEntrez.csv    | matrix expression
-[nameExp]-DadosAllSelected.csv          | all data selected
-[nameExp]-BoxplotOfArrays.pdf           | boxplot
-[nameExp]-HeatMap.pdf                   | Heat map
-[nameExp]-VolcanoPlot[expdesign].pdf    | Volcano plot
-[nameExp]-GeNNet.rda                    | RDA archive
-graph.db                                | directory with the database
-GraphDB-statistics                      | tables of some queries in Neo4j
-
-
 
 
 
