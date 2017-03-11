@@ -37,7 +37,14 @@ DOI: https://doi.org/10.1101/095257
 
 ## **Run the GeNNet** 
 
-1 - Pull our Docker image from Dockerhub. See in: [link](https://hub.docker.com/r/quelopes/gennet/)
+0 - Install Docker
+
+For Windows: [link](https://docs.docker.com/docker-for-windows/install/)
+For Mac: [link](https://docs.docker.com/docker-for-mac/install/)
+For Linux distribution (ex: Ubuntu) [link](https://docs.docker.com/engine/installation/linux/ubuntu/)
+
+1 - Pull our Docker image from Dockerhub. 
+See in: [link](https://hub.docker.com/r/quelopes/gennet/)
 
 ```
 $ docker pull quelopes/gennet
