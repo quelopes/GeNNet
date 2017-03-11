@@ -61,6 +61,8 @@ $ docker pull quelopes/gennet
 $ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio/Data -v dir/Results/:/home/rstudio/Results quelopes/gennet
 ```
 
+Obs: The ports most be available/free on the hosting system.
+
 **3 - Open your browser**
 
 3.1 - User-friendly mode, set parameters.
