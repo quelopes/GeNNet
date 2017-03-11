@@ -5,6 +5,7 @@ output:
 ---
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
 [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)
+[![DOI](https://zenodo.org/badge/76561830.svg)](https://zenodo.org/badge/latestdoi/76561830)
 
 
 <div style="float: right; margin-left: 10px;"><img title="GeNNet." style="float: right;margin-left: 10px;" src="GennetShiny/www/img/logoNew.png" align=right height=80/></div>
