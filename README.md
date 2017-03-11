@@ -35,9 +35,9 @@ DOI: https://doi.org/10.1101/095257
     * [Results](#results)
 
 
-## **Run the GeNNet** 
+## **Run GeNNet** 
 
-0 - Install Docker
+**0 - Install Docker**
 
 For Windows: [link](https://docs.docker.com/docker-for-windows/install/)
 
@@ -45,19 +45,19 @@ For Mac: [link](https://docs.docker.com/docker-for-mac/install/)
 
 For Linux distribution (ex: Ubuntu) [link](https://docs.docker.com/engine/installation/linux/ubuntu/)
 
-1 - Pull our Docker image from Dockerhub. 
+**1 - Pull our Docker image from Dockerhub.**
 See in: [link](https://hub.docker.com/r/quelopes/gennet/)
 
 ```
 $ docker pull quelopes/gennet
 ```
 
-2 - Run the Docker image   
+**2 - Run the Docker image**   
 
 ```
 $ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio -v dir/Results/:/home/rstudio quelopes/gennet
 ```
-3 - Open your browser
+**3 - Open your browser**
 
 3.1 - User-friendly mode, set parameters.
 ```
