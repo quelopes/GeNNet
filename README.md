@@ -27,10 +27,10 @@ DOI: https://doi.org/10.1101/095257
 
 
 # **Table of Contents**
-* [Run the GeNNet](#run-the-GeNNet)
+* [Run GeNNet](#run-GeNNet)
 * [Licence](#licence)
 * [About](#about)
-    * [A: A user-friendly Shiny-based web interface to the workflow experiment](#a-a-user-friendly-shiny-based-web-interface-to-the-workflow-experiment)
+    * [A: A user-friendly Shiny-based web interface for the workflow experiment](#a-a-user-friendly-shiny-based-web-interface-for-the-workflow-experiment)
     * [B: Access RStudio](#c-access-rstudio)
     * [C: Access the Graph Database](#b-access-the-graph-database)
     * [Results](#results)
@@ -62,7 +62,7 @@ $ docker pull quelopes/gennet
 $ docker run -d -p 8787:8787 -p 3838:3838 -p 7474:7474 -v dir/Data:/home/rstudio/Data -v dir/Results/:/home/rstudio/Results quelopes/gennet
 ```
 
-Obs: The ports must be available/free on the hosting system.
+Obs: The ports must be available/free on the hosting system. The directories dir/Data and dir/Results must exist in the host filesystem. More information on how to create and prepare these direcotries is described in section ARCHIVES below.
 
 **3 - Open your browser**
 
@@ -72,7 +72,7 @@ Obs: The ports must be available/free on the hosting system.
 localhost:3838/gennet
 ```
 
-3.2 - Change the functions or create news in RStudio.
+3.2 - Change the functions or create new ones in RStudio.
 
 ```
 localhost:8787
@@ -97,7 +97,7 @@ GNU GENERAL PUBLIC LICENSE version 3 by Free Software Foundation, Inc. Read the 
 
 # **About**
 
-GeNNet is a platform to execute experiments using transcriptome data, specially developed for analyzing microarray platforms currently available for human, rhesus, mice and rat. The structure is composed by three different parts: **A** -- A user-friendly Shiny-based web interface to the workflow experiment; **B** -- Executing or editing the workflow experiment using RStudio (for advanced users and developers) and **C** -- Accessing the resulting gene interaction graph database using Neo4j. Figure 1 (below) describes the GeNNet architecture.
+GeNNet is a platform to execute experiments using transcriptome data, specially developed for analyzing microarray platforms currently available for human, rhesus, mice and rat. The structure is composed by three different parts: **A** -- A user-friendly Shiny-based web interface for the workflow experiment; **B** -- Executing or editing the workflow experiment using RStudio (for advanced users and developers) and **C** -- Accessing the resulting gene interaction graph database using Neo4j. Figure 1 (below) describes the GeNNet architecture.
 
 ![Figura 1: Framework of GeNNet.](GennetShiny/www/img/GeNNet-Framework-Docker.png)
 
