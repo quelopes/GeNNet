@@ -31,8 +31,8 @@ DOI: https://doi.org/10.1101/095257
 * [Licence](#licence)
 * [About](#about)
     * [A: A user-friendly Shiny-based web interface to the workflow experiment](#a-a-user-friendly-shiny-based-web-interface-to-the-workflow-experiment)
-    * [B: Access the Graph Database](#b-access-the-graph-database)
-    * [C: Access RStudio](#c-access-rstudio)
+    * [B: Access RStudio](#c-access-rstudio)
+    * [C: Access the Graph Database](#b-access-the-graph-database)
     * [Results](#results)
 
 
