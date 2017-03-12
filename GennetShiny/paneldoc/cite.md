@@ -24,7 +24,6 @@ GNU GENERAL PUBLIC LICENSE version 3 by Free Software Foundation, Inc. converted
 
 BioRxiv: doi: https://doi.org/10.1101/095257
 
-Manuscript submited to BMC Bioinformatics.
 
 ## **We are in**
 Github: [link](https://github.com/raquele/GeNNet)
