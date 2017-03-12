@@ -28,8 +28,8 @@ DOI: https://doi.org/10.1101/095257
 * [Licence](#licence)
 * [About](#about)
     * [A: A user-friendly Shiny-based web interface to the workflow experiment](#a-a-user-friendly-shiny-based-web-interface-to-the-workflow-experiment)
-    * [B: Access the Graph Database](#b-access-the-graph-database)
-    * [C: Access RStudio](#c-access-rstudio)
+    * [B: Access RStudio](#c-access-rstudio)
+    * [C: Access the Graph Database](#b-access-the-graph-database)
     * [Results](#results)
 
 
@@ -143,7 +143,7 @@ After the configuration of all parameters, this last step executes the GeNNet wo
 The database takes some time to initialize, it will be accessible only a few seconds after starting the container. To access Rstudio, the user needs to open the service in `http://localhost:8787` and enter both the username and password as `rstudio`.
 The Figure 3 represents the workflow steps implemented in R. 
 
-![Figura 3: Workflow structure in GeNNet.](GennetShiny/www/img/WorkflowStructure.png)
+![Figura 3: Workflow structure in GeNNet.](../www/img/WorkflowStructure.png)
 
 #### **Module-A** 
 
@@ -184,7 +184,7 @@ The database is based on a NoSQL paradigm. It was built based on Neo4j [link](ht
 
 Although a NoSQL database has no fixed schema, we define an initial schema to help and guide the database. The graph structure is shown in Figure 2. We describe the nodes, relationships and properties associated with this model in detail below. 
 
-![Figura 2: Graph database schema in GeNNet.](GennetShiny/www/img/Graph_GeNNet.png)
+![Figura 2: Graph database schema in GeNNet.](../www/img/Graph_GeNNet.png)
 
 ##### **Genes**
 
