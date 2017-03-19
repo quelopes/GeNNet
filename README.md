@@ -124,7 +124,7 @@ We developed an easy-to-use layout for providing the parameters and automaticall
 
 ##### **Experiment information**
 
-This panel contains some fields for writing information about the experiment which includes `Experiment name`  and `Overall design`. We recomend using a short string in `Experiment name`. For instance GSE28619 (accession number of GEO [link](https://www.ncbi.nlm.nih.gov/geo/)) or other short denomination. Observation, the experiment name should be the same of the pheno data file prefix (e.g. if the pheno data filename is GSE3292.csv, the experiment name should be GSE28619). In `overall design` users can describe information about their experiment or copy the descriptive tag from GEO.
+This panel contains some fields for writing information about the experiment which includes `Experiment name`  and `Overall design`. We recomend using a short string in `Experiment name`. For instance GSE62232 (accession number of GEO [link](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62232)) or other short denomination. Observation, the experiment name should be the same of the pheno data file prefix (e.g. if the pheno data filename is GSE62232.csv, the experiment name should be GSE62232). In `overall design` users can describe information about their experiment or copy the descriptive tag from GEO.
 
 ##### **Normalization Parameters**
 
