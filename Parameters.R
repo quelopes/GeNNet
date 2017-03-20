@@ -1,12 +1,12 @@
 # ======================
 # === Configurations ===
 # ======================
-nameExp = "GSE28619"
+nameExp = "GSE62232"
 orgAnnot = "org.Hs.eg.db"
 GPL = "GPL570.txt"
 
 # --- Experiment Information ---
-overalDesign = "Hepatic gene expression profiling was assessed by DNA microarray in patients with Alcoholic hepatitis (n=15) and normal livers (n=7)."
+overalDesign = "HCC liver tumors corresponding to 81 patients. In all cases, tumor samples were frozen (-80°C) after hepatic resection at diagnosis. Normal liver samples were used as reference samples. Comparative gene expression analysis was done using Affymetrix U133plus v2 array (GPL570)"
 platName = "[HG-U133_Plus_2] Affymetrix Human Genome U133 Plus 2.0 Array"
 platAccess = "GPL570"
 
@@ -42,3 +42,4 @@ matDist = "Pearson"
 
 source("Module-A/ModuleProcessing.R")
 moduleProcessing()
+
