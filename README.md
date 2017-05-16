@@ -145,6 +145,8 @@ The Figure 3 represents the workflow steps implemented in R.
 
 The directory `Module-A` contains a set of R functions that correspond to the steps of analysis described in: A -- A user-friendly Shiny-based web interface to the workflow experiment.
 
+The users can modify the R scripts to customize the analyses. Furthermore, new scripts and libraries can be added through the RStudio interface. This gives an idea about the flexibility of the system defined as workflow management. 
+
 ### **Results**
 During the workflow execution (in Shiny or RStudio) a set of results are written in the directory `Results` which ensures the re-use and persistence of data. 
 
