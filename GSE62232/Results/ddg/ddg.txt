@@ -1,0 +1,62 @@
+Architecture="x86_64"
+OperatingSystem="unix"
+Language="R"
+LanguageVersion="R version 3.3.2 (2016-10-31)"
+RDataTrackerVersion="2.24.0"
+WorkingDirectory="/home/rstudio"
+DDGDirectory="/home/rstudio/ddg"
+DateTime="2017-03-12T01.39.05UTC"
+InstalledPackages="AnnotationDbi 1.36.2, Biobase 2.34.0, BiocGenerics 0.20.0, Category 2.40.0, GO.db 3.4.0, GOstats 2.40.0, IRanges 2.8.1, Matrix 1.2-7.1, RColorBrewer 1.1-2, RDataTracker 2.24.0, RNeo4j 1.6.4, S4Vectors 0.12.1, VennDiagram 1.6.17, WGCNA 1.51, affy 1.52.0, d3heatmap 0.6.1.1, data.table 1.10.4, dynamicTreeCut 1.63-1, fastcluster 1.1.22, fpc 2.1-10, frma 1.26.0, futile.logger 1.4.3, ggplot2 2.2.1, gplots 3.0.1, graph 1.52.0, hgu133a2cdf 2.18.0, hgu133plus2cdf 2.18.0, hgu133plus2frmavecs 1.5.0, hugene10stv1cdf 2.18.0, igraph 1.0.1, impute 1.48.0, limma 3.30.12, networkD3 0.3, org.Hs.eg.db 3.4.0, org.Mm.eg.db 3.4.0, org.Mmu.eg.db 3.4.0, org.Rn.eg.db 3.4.0, shiny 1.0.0, shinydashboard 0.5.3, shinythemes 1.1.1, stringr 1.2.0, visNetwork 1.0.3"
+26
+Start p1 "1-dependences" Value="dependences" Time="0.00100000000000033" Script="NA" Line="NA";
+Finish p2 "2-dependences" Value="dependences" Time="11.076" Script="NA" Line="NA";
+CF p1 p2
+Start p3 "3-node experiment" Value="node experiment" Time="11.077" Script="NA" Line="NA";
+CF p2 p3
+Finish p4 "4-node experiment" Value="node experiment" Time="11.15" Script="NA" Line="NA";
+CF p3 p4
+Start p5 "5-normalize" Value="normalize" Time="11.151" Script="NA" Line="NA";
+CF p4 p5
+Finish p6 "6-normalize" Value="normalize" Time="1088.667" Script="NA" Line="NA";
+CF p5 p6
+Start p7 "7-e-set" Value="e-set" Time="1088.668" Script="NA" Line="NA";
+CF p6 p7
+Finish p8 "8-e-set" Value="e-set" Time="1088.817" Script="NA" Line="NA";
+CF p7 p8
+Start p9 "9-limma" Value="limma" Time="1088.818" Script="NA" Line="NA";
+CF p8 p9
+Finish p10 "10-limma" Value="limma" Time="1089.748" Script="NA" Line="NA";
+CF p9 p10
+Start p11 "11-annotation" Value="annotation" Time="1089.749" Script="NA" Line="NA";
+CF p10 p11
+Finish p12 "12-annotation" Value="annotation" Time="1095.256" Script="NA" Line="NA";
+CF p11 p12
+Start p13 "13-nodes expression" Value="nodes expression" Time="1095.257" Script="NA" Line="NA";
+CF p12 p13
+Finish p14 "14-nodes expression" Value="nodes expression" Time="1580.65" Script="NA" Line="NA";
+CF p13 p14
+Start p15 "15-clusterization" Value="clusterization" Time="1580.651" Script="NA" Line="NA";
+CF p14 p15
+Finish p16 "16-clusterization" Value="clusterization" Time="1648.06" Script="NA" Line="NA";
+CF p15 p16
+Start p17 "17-nodes cluster" Value="nodes cluster" Time="1648.061" Script="NA" Line="NA";
+CF p16 p17
+Finish p18 "18-nodes cluster" Value="nodes cluster" Time="1681.21" Script="NA" Line="NA";
+CF p17 p18
+Start p19 "19-nodes wgcna" Value="nodes wgcna" Time="1681.211" Script="NA" Line="NA";
+CF p18 p19
+Finish p20 "20-nodes wgcna" Value="nodes wgcna" Time="1766.28" Script="NA" Line="NA";
+CF p19 p20
+Start p21 "21-functional analysis" Value="functional analysis" Time="1766.281" Script="NA" Line="NA";
+CF p20 p21
+Finish p22 "22-functional analysis" Value="functional analysis" Time="1819.585" Script="NA" Line="NA";
+CF p21 p22
+Start p23 "23-nodes funct.analysis" Value="nodes funct.analysis" Time="1819.585" Script="NA" Line="NA";
+CF p22 p23
+Finish p24 "24-nodes funct.analysis" Value="nodes funct.analysis" Time="1840.23" Script="NA" Line="NA";
+CF p23 p24
+Start p25 "25-persistence" Value="persistence" Time="1840.231" Script="NA" Line="NA";
+CF p24 p25
+Finish p26 "26-persistence" Value="persistence" Time="1842.366" Script="NA" Line="NA";
+CF p25 p26
+

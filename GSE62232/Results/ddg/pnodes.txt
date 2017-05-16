@@ -1,0 +1,27 @@
+ddg.type	ddg.num	ddg.name	ddg.value	ddg.return.linked	ddg.auto.created	ddg.time	ddg.snum	ddg.lnum
+Start	1	dependences	dependences	FALSE	FALSE	0.00100000000000033	NA	NA
+Finish	2	dependences	dependences	FALSE	FALSE	11.076	NA	NA
+Start	3	node experiment	node experiment	FALSE	FALSE	11.077	NA	NA
+Finish	4	node experiment	node experiment	FALSE	FALSE	11.15	NA	NA
+Start	5	normalize	normalize	FALSE	FALSE	11.151	NA	NA
+Finish	6	normalize	normalize	FALSE	FALSE	1088.667	NA	NA
+Start	7	e-set	e-set	FALSE	FALSE	1088.668	NA	NA
+Finish	8	e-set	e-set	FALSE	FALSE	1088.817	NA	NA
+Start	9	limma	limma	FALSE	FALSE	1088.818	NA	NA
+Finish	10	limma	limma	FALSE	FALSE	1089.748	NA	NA
+Start	11	annotation	annotation	FALSE	FALSE	1089.749	NA	NA
+Finish	12	annotation	annotation	FALSE	FALSE	1095.256	NA	NA
+Start	13	nodes expression	nodes expression	FALSE	FALSE	1095.257	NA	NA
+Finish	14	nodes expression	nodes expression	FALSE	FALSE	1580.65	NA	NA
+Start	15	clusterization	clusterization	FALSE	FALSE	1580.651	NA	NA
+Finish	16	clusterization	clusterization	FALSE	FALSE	1648.06	NA	NA
+Start	17	nodes cluster	nodes cluster	FALSE	FALSE	1648.061	NA	NA
+Finish	18	nodes cluster	nodes cluster	FALSE	FALSE	1681.21	NA	NA
+Start	19	nodes wgcna	nodes wgcna	FALSE	FALSE	1681.211	NA	NA
+Finish	20	nodes wgcna	nodes wgcna	FALSE	FALSE	1766.28	NA	NA
+Start	21	functional analysis	functional analysis	FALSE	FALSE	1766.281	NA	NA
+Finish	22	functional analysis	functional analysis	FALSE	FALSE	1819.585	NA	NA
+Start	23	nodes funct.analysis	nodes funct.analysis	FALSE	FALSE	1819.585	NA	NA
+Finish	24	nodes funct.analysis	nodes funct.analysis	FALSE	FALSE	1840.23	NA	NA
+Start	25	persistence	persistence	FALSE	FALSE	1840.231	NA	NA
+Finish	26	persistence	persistence	FALSE	FALSE	1842.366	NA	NA
