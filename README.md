@@ -33,9 +33,7 @@ DOI: https://doi.org/10.1101/095257
     * [A: A user-friendly Shiny-based web interface for the workflow experiment](#a-a-user-friendly-shiny-based-web-interface-for-the-workflow-experiment)
     * [B: Access RStudio](#c-access-rstudio)
     * [C: Access the Graph Database](#b-access-the-graph-database)
-    * [Results](#results)
-
-
+ 
 ## **Run GeNNet** 
 
 
@@ -84,7 +82,7 @@ Before starting the `gennet` software container in Docker the user needs to uplo
 
 The pheno data is loaded when starting the GeNNet container. However, users can upload their own pheno data matrices. Separator can be choosen to be tab (\\t) or comma (,). The current matrix can be visualized in the `PhenoData` tab.
 
-The input file must be structured using mainly two columns: a column named SETS for the experimental design, and a column named SAMPLE_NAME for the names of the files containing raw sample expression matrix data.
+The input file must be structured using mainly two columns: a column named `SETS` for the experimental design, and a column named `SAMPLE_NAME` for the names of the files containing raw sample expression matrix data.
 
 ##### **CEL archives**
 
@@ -104,8 +102,6 @@ localhost:3838/gennet
 ##### **Experiment information**
 
 This panel contains some fields for writing information about the experiment which includes `Experiment name`  and `Overall design`. We recomend using a short string in `Experiment name`. For instance GSE62232 (accession number of GEO [link](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62232)) or other short denomination. Observation, the experiment name should be the same of the pheno data file prefix (e.g. if the pheno data filename is GSE62232.csv, the experiment name should be GSE62232). In `overall design` users can describe information about their experiment or copy the descriptive tag from GEO.
-
-In this step, data about the experimental design should be added along with log-normalized expression values. This generates an ExpressionSet (eSet) object, a data structure object of the S4 class used as base in many packages developed in Bioconductor transcriptome analysis. This format gives flexibility and access to existing functionality. The input file must be structured using mainly two columns: a column named `SETS` for the experimental design, and a column named `SAMPLE_NAME` for the names of the files containing raw sample expression matrix data.
 
 ##### **Normalization Parameters**
 
