@@ -123,8 +123,6 @@ Currently GeNNet contains four platforms with the corresponding number associate
 
 This step consists in analyzing which aggregated genes have a similar pattern (or level) of expression. We incorporated clusterization analysis including hierarchical methods, k-medoids from the package `PAM` (Partitioning Around Medoids) and `WGCNA` (Weighted Gene Coexpression Network Analysis).
 
-The distance matrix include Euclidian, Pearson correlation and Spearman.
-
 ##### **Functional analysis**
 
 In the genes grouped by similar patterns we can identify over-represented (enriched) biological processes (`BP`). In our approach we conducted enrichment analyses applying hypergeometric tests (with p-value < 0.001) as implemented in the GOStats package. The universe is defined accrding to the Affymetrix platform selected, or, in case of multiple platforms in a single experiment design, the universe is defined as the common and unique genes among all Affymetrix platforms. The subset, geneset, is defined either by the set of diferentially expressed (DE) genes between a test and a control condition (control versus treatment design), or by the union of the DE genes selected among the pairwise comparisons among groups in all other single-factor experimental designs. Ontology information for the gene and universe sets is extracted from the Gene Ontology Consortium database `(GO)`.
