@@ -119,9 +119,7 @@ The platform parameters include setting of `platform` and the `organism`. The `p
 
 ##### **Clusterization Parameters**
 
-This step consists in analyzing which aggregated genes have a similar pattern (or level) of expression. We incorporated clusterization analysis including hierarchical methods, k-medoids from the package `PAM` (Partitioning Around Medoids) and `WGCNA` (Weighted Gene Coexpression Network Analysis).
-
-The distance matrix include Euclidian, Pearson correlation and Spearman.
+This step consists in analyzing which aggregated genes have a similar pattern (or level) of expression. We incorporated clusterization analysis including hierarchical methods, k-medoids from the package `PAM` (Partitioning Around Medoids) and `WGCNA` (Weighted Gene Coexpression Network Analysis). 
 
 ##### **Functional analysis**
 
