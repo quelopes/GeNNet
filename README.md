@@ -71,7 +71,7 @@ GNU GENERAL PUBLIC LICENSE version 3 by Free Software Foundation, Inc. Read the 
 
 GeNNet is a platform to execute experiments using transcriptome data, specially developed for analyzing microarray platforms currently available for human, rhesus, mice and rat. The structure is composed by three different parts: **A** -- A user-friendly Shiny-based web interface for the workflow experiment; **B** -- Executing or editing the workflow experiment using RStudio (for advanced users and developers) and **C** -- Accessing the resulting gene interaction graph database using Neo4j. Figure 1 (below) describes the GeNNet architecture.
 
-![Figura 1: Framework of GeNNet.](GennetShiny/www/img/GeNNet-Framework-Docker.png)
+![Figure 1: Framework of GeNNet.](GennetShiny/www/img/GeNNet-Framework-Docker.png)
 
 
 #### **ARCHIVES** 
@@ -135,7 +135,7 @@ The database takes some time to initialize, it will be accessible only a few sec
 
 The Figure 3 represents the workflow steps implemented in R. 
 
-![Figura 3: Workflow structure in GeNNet.](GennetShiny/www/img/WorkflowStructure.png)
+![Figure 3: Workflow structure in GeNNet.](GennetShiny/www/img/WorkflowStructure.png)
 
 The directory `Module-A` contains a set of R functions that correspond to the steps of analysis described in: A -- A user-friendly Shiny-based web interface to the workflow experiment.
 
@@ -150,9 +150,9 @@ The graph database is an intuitive way for connecting and visualizing relationsh
 
 The database is based on a NoSQL paradigm. It was built based on Neo4j [link](https://neo4j.com/) (username: neo4j, password: graph). We chose this database because it was a natural way of representing the interaction among the nodes (genes) and the nodes derived from analysis. Furthermore, this database is free to use, multiplatform and easy to use and manipulate the data. 
 
-Although a NoSQL database has no fixed schema, we define an initial schema to help and guide the database. The graph structure is shown in Figure 2. We describe the nodes, relationships and properties associated with this model in detail below. 
+Although a NoSQL database has no fixed schema, we define an initial schema to help and guide the database. The graph structure is shown in Figure 4. We describe the nodes, relationships and properties associated with this model in detail below. 
 
-![Figura 2: Graph database schema in GeNNet.](GennetShiny/www/img/Graph_GeNNet.png)
+![Figura 4: Graph database schema in GeNNet.](GennetShiny/www/img/Graph_GeNNet.png)
 
 ##### **Genes**
 
