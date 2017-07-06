@@ -8,7 +8,7 @@ output:
 [![DOI](https://zenodo.org/badge/76561830.svg)](https://zenodo.org/badge/latestdoi/76561830)
 
 
-# GeNNet: An Integrated platform for unifying scientific workflow management and graph databases for transcriptome data analysis
+# GeNNet: an integrated platform for unifying scientific workflows and graph databases for transcriptome data analysis. 
 
 _Raquel L. Costa_ and _Luiz Gadelha_ and _Marcelo Ribeiro-Alves_ and _Fabio Porto_ 
 
@@ -19,9 +19,8 @@ _National Institute of Infectology, Oswaldo Cruz Foundation (Fiocruz)_
 e-mail: quelopes@gmail.com
 
 ## **References**
-GeNNet: An Integrated Platform for Unifying Scientific Workflow Management and Graph Databases for Transcriptome Data Analysis.
-DOI: https://doi.org/10.1101/095257
-
+GeNNet: an integrated platform for unifying scientific workflows and graph databases for transcriptome data analysis. 
+DOI: https://doi.org/10.7717/peerj.3509
 
 # **Table of Contents**
 * [Run the GeNNet](#run-the-GeNNet)
