@@ -19,7 +19,8 @@ _National Institute of Infectology, Oswaldo Cruz Foundation (Fiocruz)_
 e-mail: quelopes@gmail.com
 
 ## **References**
-GeNNet: an integrated platform for unifying scientific workflows and graph databases for transcriptome data analysis. 
+GeNNet: an integrated platform for unifying scientific workflows and graph databases for transcriptome data analysis.
+
 DOI: https://doi.org/10.7717/peerj.3509
 
 # **Table of Contents**
@@ -30,9 +31,7 @@ DOI: https://doi.org/10.7717/peerj.3509
     * [B: Access RStudio](#c-access-rstudio)
     * [C: Access the Graph Database](#b-access-the-graph-database)
 
-
 ## **Run GeNNet** 
-
 
 **0 - Install Docker**
 
