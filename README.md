@@ -19,7 +19,7 @@ _National Laboratory for Scientific Computing (LNCC),_
 _National Laboratory of Cancer (INCA),_
 _National Institute of Infectology, Oswaldo Cruz Foundation (Fiocruz)_
 
-e-mail: quelopes@gmail.com
+e-mail: quelopes@gmail.com or quelopes@lncc.br
 
 ## **References**
 GeNNet: an integrated platform for unifying scientific workflows and graph databases for transcriptome data analysis. 
