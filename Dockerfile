@@ -3,9 +3,9 @@ FROM debian:8
 MAINTAINER Raquel Lopes Costa "quelopes@gmail.com"
 EXPOSE 3838 7474 8787
 
-# =============
+# ===================
 # --- Linux AND R ---
-# =============
+# ===================
 
 RUN echo "deb http://cran.rstudio.com/bin/linux/debian jessie-cran3/" >> /etc/apt/sources.list && \
     echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list && \
