@@ -1,11 +1,8 @@
 // Create indexes for faster lookup
-//CREATE INDEX ON :Category(categoryName);
-//CREATE INDEX ON :SubCategory(subCategoryName);
 CREATE INDEX ON :ORGANISM(sciName);
 CREATE INDEX ON :GENE(symbol);
 
 // Create constraints
-//CREATE CONSTRAINT ON (t:TF) ASSERT t.geneType IS UNIQUE;
 CREATE CONSTRAINT ON (g:GENE) ASSERT g.entrezId IS UNIQUE;
 CREATE CONSTRAINT ON (o:ORGANISM) ASSERT o.taxId IS UNIQUE;
 CREATE CONSTRAINT ON (p:PLATFORM) ASSERT p.platAccess IS UNIQUE;
