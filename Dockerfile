@@ -73,9 +73,14 @@ RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubu
     apt-get -y clean
 RUN R -e "install.packages(c('shinydashboard','shiny','shinythemes','RNeo4j','visNetwork','ggplot2','data.table','networkD3','igraph','shinyBS','RColorBrewer','devtools','d3heatmap'), repos='https://cran.rstudio.com/', clean=TRUE)"
 
-RUN wget -O RDataTracker.tar.gz http://harvardforest.fas.harvard.edu/data/p09/hf091/hf091-01-RDataTracker_2.24.0.tar.gz && \
-    R CMD INSTALL RDataTracker.tar.gz && \
-    rm RDataTracker.tar.gz
+#RUN wget -O RDataTracker.tar.gz http://harvardforest.fas.harvard.edu/data/p09/hf091/hf091-01-RDataTracker_2.24.0.tar.gz && \
+#    R CMD INSTALL RDataTracker.tar.gz && \
+#    rm RDataTracker.tar.gz
+
+# Github version packages -- RDataTracker
+RUN R -e " \
+devtools::install_github('End-to-end-provenance/RDataTracker'); \
+"
 
 COPY shiny-server.sh /usr/bin/shiny-server.sh
 RUN chmod 755 /usr/bin/shiny-server.sh
